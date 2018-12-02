@@ -4,6 +4,9 @@
   "description": "test-molecule",
   "main": "index.js",
   "scripts": {
+    
+    "start": "nodemon src/gui/index.js",
+    "start-legacy": "nodemon --legacy-watch src/gui/index.js",
     "dev": "nodemon examples/index.js",
     "ci": "jest --watch",
     "test": "jest --coverage",
@@ -47,5 +50,9 @@
   },
   "engines": {
     "node": ">= 6.x.x"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14"
   }
 }
