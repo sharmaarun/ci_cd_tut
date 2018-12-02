@@ -3,14 +3,14 @@ services:
   - docker
 
 before_install:
-  - docker build -t sharmaaarun/ci_cd_test -f ./Dockerfile.dev .
+  - docker build -t sharmaarun/ci_cd_test -f ./Dockerfile.dev .
 
 script:
-  - docker run sharmaaarun/ci_cd_test npm test
+  - docker run sharmaarun/ci_cd_test npm test
 
 after_success:
-  - docker build -t sharmaaarun/ci_cd_tut:latest .
+  - docker build -t sharmaarun/ci_cd_tut:latest .
   #login to docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #push the image
-  - docker push sharmaaarun/ci_cd_tut:latest
+  - docker push sharmaarun/ci_cd_tut:latest
